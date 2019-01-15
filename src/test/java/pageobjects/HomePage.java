@@ -39,6 +39,12 @@ public class HomePage {
 	@FindBy(css="div.body-message")
 	public WebElement lbSuccessRegisMess;
 	
+	@FindBy(css="div.error")
+	public WebElement errorNullFullNameMess;
+	
+	@FindBy(css="div.body-message")
+	public WebElement notifyExistedEmail;
+	
 	// The Contructor to initialize  the page factory 
 	
 	public HomePage (WebDriver driver)

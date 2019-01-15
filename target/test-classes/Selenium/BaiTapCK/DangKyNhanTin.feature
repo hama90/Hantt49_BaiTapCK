@@ -34,3 +34,16 @@ Feature: Title of your feature
     And I provide extra information
    Then I should see the success message : "Bạn đã đăng ký nhận bản tin thành công. Hãy kiểm tra Email để xác nhận việc đăng ký"
 
+ @tag3
+    Scenario: register without FULLNAME
+    Given I am staying at site "http://testmaster.vn/"
+    When I provide a valid email
+    And I do not input Fullname and submit form
+   Then I should see the required message: "This is required field"
+   
+    @tag4
+    Scenario: register with existed email
+    Given I am staying at site "http://testmaster.vn/"
+    When I provide an existed email 
+    Then I should see a popup with content: "E-mail abc@123.com đã được sử dụng, bạn hãy chọn một E-mail khác"
+    
